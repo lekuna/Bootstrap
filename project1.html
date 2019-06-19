@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>乐坤的项目</title>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	
+	<style type="text/css">
+		body{
+			margin: 50px;
+		}
+		
+	</style>
+	<body>
+<div class="container">
+  <h2>动画进度条</h2>
+  <p>使用 .progress-bar-animated 类可以为进度条添加动画：</p> 
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%"></div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-success">成功按钮</button>
+<script type="text/javascript">
+	var width=$(".progress-bar")[0].style.width.slice(0,2)*1;
+	
+	$("button").click(function(){
+		setInterval(function(){
+			if(width<=95){
+				width+=5;
+				$(".progress-bar").css('width',width+'%')
+			}
+		},1000)
+	})
+</script>
+	</body>
+</html>
